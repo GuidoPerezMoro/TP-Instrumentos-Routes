@@ -1,0 +1,11 @@
+.homeContainer {
+  text-align: center;
+  padding: 20px;
+}
+
+.storeImage {
+  max-width: 60%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

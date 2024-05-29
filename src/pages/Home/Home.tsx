@@ -1,13 +1,13 @@
-import "../css/styles.css";
+import styles from "./Home.module.css";
 
 export const Home = () => {
   return (
-    <div className="home-container">
+    <div className={styles.homeContainer}>
       <h1>Armonía Melódica</h1>
       <img
-        src="src/images/home.jpg"
+        src="src/data/images/home.jpg"
         alt="Imagen de la tienda"
-        className="store-image"
+        className={styles.storeImage}
       />
       <p>
         Armonía Melódica es tu destino definitivo para explorar el mundo de la

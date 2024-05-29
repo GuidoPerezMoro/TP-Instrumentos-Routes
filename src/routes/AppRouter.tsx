@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { NavBar } from "../components/NavBar";
-import { Home } from "../pages/Home";
-import { DondeEstamos } from "../pages/DondeEstamos";
-import { Productos } from "../pages/Productos";
+import { Home } from "../pages/Home/Home";
+import { DondeEstamos } from "../pages/DondeEstamos/DondeEstamos";
+import { Productos } from "../pages/Productos/Productos";
 
 // Componente AppRouter que define las rutas de la aplicación
 export const AppRouter = () => {
