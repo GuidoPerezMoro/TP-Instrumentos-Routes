@@ -4,8 +4,8 @@
 }
 
 .storeImage {
-  max-width: 60%;
+  max-width: 75%;
   height: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
 }

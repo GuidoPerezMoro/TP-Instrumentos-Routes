@@ -1,9 +1,9 @@
 import { FC } from "react";
-import Instrumento from "../../../types/instrumento";
 
 import "./../../../styles/variables.css"; // Importa las variables primero
 import styles from "./ListInstrumentos.module.css"; // Importa el módulo CSS
 import { CardInstrumento } from "./../CardInstrumento/CardInstrumento";
+import { Instrumento } from "../../../types/Instrumento";
 
 interface IListInstrumentos {
   instrumentos: Instrumento[];
@@ -20,11 +20,8 @@ export const ListInstrumentos: FC<IListInstrumentos> = ({
         <h2>{title}</h2>
       </div>
       <div className={styles.containerList}>
-        {instrumentos.map((instrumento) => (
-          <div>
-            <h4>Instrumento: </h4>
-            <p>{instrumento.instrumento}</p>
-          </div>
+        {instrumentos.map((inst) => (
+          <CardInstrumento instrumento={inst} key={inst.id} />
         ))}
       </div>
     </div>

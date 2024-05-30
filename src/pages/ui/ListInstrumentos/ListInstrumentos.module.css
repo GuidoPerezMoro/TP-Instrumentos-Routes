@@ -23,8 +23,6 @@
   margin: 2rem;
   width: 85vw;
   padding: 0.4rem;
-  grid-template-columns: repeat(4, 1fr);
   gap: 2vw;
   max-height: 80vh;
-  overflow-y: auto;
 }

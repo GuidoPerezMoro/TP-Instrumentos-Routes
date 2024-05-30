@@ -1,8 +1,15 @@
 import { Button, Card } from "react-bootstrap";
+import { Instrumento } from "../../../types/Instrumento";
+import { FC } from "react";
+import styles from "./CardInstrumento.module.css";
 
-export const CardInstrumento = () => {
+interface ICardInstrumento {
+  instrumento: Instrumento;
+}
+
+export const CardInstrumento: FC<ICardInstrumento> = ({ instrumento }) => {
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card className={styles.cardInstrumento}>
       <Card.Img variant="top" src="holder.js/100px180" />
       <Card.Body>
         <Card.Title>Card Title</Card.Title>
