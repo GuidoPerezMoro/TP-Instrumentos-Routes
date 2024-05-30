@@ -14,15 +14,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0.4rem;
   background-color: var(--backgroundColor);
 }
 
 .containerList {
   display: grid;
-  margin: 2rem;
   width: 85vw;
-  padding: 0.4rem;
-  gap: 2vw;
+  padding: 2vh;
+  gap: 1vh;
   max-height: 80vh;
 }

@@ -1,24 +1,77 @@
-import { Button, Card } from "react-bootstrap";
-import { Instrumento } from "../../../types/Instrumento";
-import { FC } from "react";
+import React from "react";
+import { Card, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import styles from "./CardInstrumento.module.css";
+import { Instrumento } from "../../../types/Instrumento";
 
-interface ICardInstrumento {
+interface CardInstrumentoProps {
   instrumento: Instrumento;
 }
 
-export const CardInstrumento: FC<ICardInstrumento> = ({ instrumento }) => {
+export const CardInstrumento: React.FC<CardInstrumentoProps> = ({
+  instrumento,
+}) => {
+  const navigate = useNavigate();
+
+  const handleViewDetail = () => {
+    navigate(`/detalle/${instrumento.id}`, { state: { instrumento } });
+  };
+
+  const envioInfo =
+    instrumento.costoEnvio === "G" ? (
+      <div className={styles.envioGratis}>
+        <span className={`material-symbols-outlined ${styles.icon}`}>
+          local_shipping
+        </span>
+        Envío gratis
+      </div>
+    ) : (
+      <div className={styles.envioCosto}>
+        <span className={`material-symbols-outlined ${styles.icon}`}>
+          local_shipping
+        </span>
+        Costo de envío: ${instrumento.costoEnvio}
+      </div>
+    );
+
   return (
     <Card className={styles.cardInstrumento}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
+      <div className={styles.cardContent}>
+        <div className={styles.imageContainer}>
+          <Card.Img
+            className={styles.instrumentImage}
+            src={`src/data/images/Instrumentos/${instrumento.imagen}`}
+          />
+        </div>
+        <Card.Body className={styles.cardBody}>
+          <Card.Title>{instrumento.instrumento}</Card.Title>
+          <Card.Text>
+            Marca: {instrumento.marca}
+            <br />
+            Modelo: {instrumento.modelo}
+            <br />
+            Precio: ${instrumento.precio}
+            <br />
+            {envioInfo}
+            <br />
+            {instrumento.descripcion}
+          </Card.Text>
+          <div className={styles.buttonsContainer}>
+            <Button
+              variant="primary"
+              onClick={handleViewDetail}
+              className={styles.detailButton}
+            >
+              <span className="material-symbols-outlined">info</span> Ver
+              Detalle
+            </Button>
+            <Button variant="primary" className={styles.cartButton}>
+              <span className="material-symbols-outlined">shopping_cart</span>{" "}
+              Agregar al carrito
+            </Button>
+          </div>
+        </Card.Body>
+      </div>
     </Card>
   );
 };
