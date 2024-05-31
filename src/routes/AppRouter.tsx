@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import { NavBar } from "../components/NavBar";
+import { NavBar } from "../components/NavBar/NavBar";
 import { Home } from "../pages/Home/Home";
 import { DondeEstamos } from "../pages/DondeEstamos/DondeEstamos";
 import { Productos } from "../pages/Productos/Productos";
+import { ProductoDetalle } from "../pages/ProductoDetalle/ProductoDetalle";
 
 // Componente AppRouter que define las rutas de la aplicación
 export const AppRouter = () => {
@@ -15,6 +16,7 @@ export const AppRouter = () => {
         <Route path="/" element={<Home />} />
         <Route path="/donde-estamos" element={<DondeEstamos />} />
         <Route path="/productos" element={<Productos />} />
+        <Route path="/producto/:id" element={<ProductoDetalle />} />
       </Routes>
     </>
   );

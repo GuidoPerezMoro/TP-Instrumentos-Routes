@@ -14,7 +14,7 @@ export const CardInstrumento: React.FC<CardInstrumentoProps> = ({
   const navigate = useNavigate();
 
   const handleViewDetail = () => {
-    navigate(`/detalle/${instrumento.id}`, { state: { instrumento } });
+    navigate(`/producto/${instrumento.id}`);
   };
 
   const envioInfo =
@@ -40,7 +40,7 @@ export const CardInstrumento: React.FC<CardInstrumentoProps> = ({
         <div className={styles.imageContainer}>
           <Card.Img
             className={styles.instrumentImage}
-            src={`src/data/images/Instrumentos/${instrumento.imagen}`}
+            src={`public/assets/images/Instrumentos/${instrumento.imagen}`}
           />
         </div>
         <Card.Body className={styles.cardBody}>

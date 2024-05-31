@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getAllInstrumentos } from "../../services/funcionesApi";
-import { ListInstrumentos } from "../ui/ListInstrumentos/ListInstrumentos";
 import { Instrumento } from "../../types/Instrumento";
+import { ListInstrumentos } from "../../components/ui/ListInstrumentos/ListInstrumentos";
 
 export const Productos = () => {
   const [instrumentos, setInstrumentos] = useState<Instrumento[]>([]);

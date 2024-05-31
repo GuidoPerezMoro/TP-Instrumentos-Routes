@@ -5,7 +5,7 @@ export const Home = () => {
     <div className={styles.homeContainer}>
       <h1>Armonía Melódica</h1>
       <img
-        src="src/data/images/home.jpg"
+        src="public/assets/images/home.jpg"
         alt="Imagen de la tienda"
         className={styles.storeImage}
       />
